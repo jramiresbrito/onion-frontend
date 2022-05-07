@@ -1,3 +1,5 @@
+import { Header } from './components/Header';
+
 import { GlobalStyle } from './styles/global';
 
 export function App() {
@@ -5,7 +7,7 @@ export function App() {
     <div className="App">
       <>
         <GlobalStyle />
-        <h1>Hello Onion!</h1>
+        <Header />
       </>
     </div>
   );
