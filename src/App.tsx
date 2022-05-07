@@ -1,7 +1,12 @@
+import { GlobalStyle } from './styles/global';
+
 export function App() {
   return (
     <div className="App">
-      <h1>Hello Onion!</h1>
+      <>
+        <GlobalStyle />
+        <h1>Hello Onion!</h1>
+      </>
     </div>
   );
 }
