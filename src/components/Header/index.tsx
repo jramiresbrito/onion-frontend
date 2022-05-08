@@ -1,37 +1,20 @@
-import { useState } from 'react';
-import Modal from 'react-modal';
 import { Logo } from '../Logo/index';
 
 import { Container, Content } from './styles';
 
-Modal.setAppElement('#root');
+interface HeaderProps {
+  onOpenSatelitesModal: () => void;
+}
 
-export function Header() {
-  const [satelitesModalIsOpened, setSatelitesModalIsOpened] = useState(false);
-
-  function handleOpenSatelitesModal() {
-    setSatelitesModalIsOpened(true);
-  }
-
-  function handleCloseSatelitesModal() {
-    setSatelitesModalIsOpened(false);
-  }
-
+export function Header({ onOpenSatelitesModal }: HeaderProps) {
   return (
     <Container>
       <Content>
         <Logo />
 
-        <button type="button" onClick={handleOpenSatelitesModal}>
+        <button type="button" onClick={onOpenSatelitesModal}>
           Find Satelites
         </button>
-
-        <Modal
-          isOpen={satelitesModalIsOpened}
-          onRequestClose={handleCloseSatelitesModal}
-        >
-          <h2>Find Nearby Satelites</h2>
-        </Modal>
       </Content>
     </Container>
   );
