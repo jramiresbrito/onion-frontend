@@ -3,17 +3,17 @@ import { Logo } from '../Logo/index';
 import { Container, Content } from './styles';
 
 interface HeaderProps {
-  onOpenSatelitesModal: () => void;
+  onOpensatellitesModal: () => void;
 }
 
-export function Header({ onOpenSatelitesModal }: HeaderProps) {
+export function Header({ onOpensatellitesModal }: HeaderProps) {
   return (
     <Container>
       <Content>
         <Logo />
 
-        <button type="button" onClick={onOpenSatelitesModal}>
-          Find Satelites
+        <button type="button" onClick={onOpensatellitesModal}>
+          Find Satellites
         </button>
       </Content>
     </Container>

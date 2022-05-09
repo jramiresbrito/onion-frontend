@@ -2,33 +2,38 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 
 import { Header } from './components/Header';
-import { SatelitesModal } from './components/SatelitesModal';
+import { SatellitesModal } from './components/SatellitesModal';
+import { Globe } from './components/Globe';
 
 import { GlobalStyle } from './styles/global';
+import { SatellitesProvider } from './hooks/useSatellites';
 
 Modal.setAppElement('#root');
 
 export function App() {
-  const [satelitesModalIsOpened, setSatelitesModalIsOpened] = useState(false);
+  const [satellitesModalIsOpened, setSatellitesModalIsOpened] = useState(false);
 
-  function handleOpenSatelitesModal() {
-    setSatelitesModalIsOpened(true);
+  function handleOpenSatellitesModal() {
+    setSatellitesModalIsOpened(true);
   }
 
-  function handleCloseSatelitesModal() {
-    setSatelitesModalIsOpened(false);
+  function handleCloseSatellitesModal() {
+    setSatellitesModalIsOpened(false);
   }
+
   return (
     <div className="App">
-      <>
+      <SatellitesProvider>
         <GlobalStyle />
-        <Header onOpenSatelitesModal={handleOpenSatelitesModal} />
+        <Header onOpensatellitesModal={handleOpenSatellitesModal} />
 
-        <SatelitesModal
-          isOpen={satelitesModalIsOpened}
-          onRequestClose={handleCloseSatelitesModal}
+        <SatellitesModal
+          isOpen={satellitesModalIsOpened}
+          onRequestClose={handleCloseSatellitesModal}
         />
-      </>
+
+        <Globe />
+      </SatellitesProvider>
     </div>
   );
 }
