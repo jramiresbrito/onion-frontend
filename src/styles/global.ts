@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
+    --space-void: #010718;
     --background: #d3d3d3;
     --blue-onion: #2365B0;
     --blue-onion-dark: #373B5D;
@@ -31,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: var(--background);
+    background-color: var(--space-void);
     -webkit-font-smoothing: antialiased;
   }
 

@@ -3,16 +3,20 @@ import { Logo } from '../Logo/index';
 import { Container, Content } from './styles';
 
 interface HeaderProps {
-  onOpensatellitesModal: () => void;
+  onOpenSatellitesModal: () => void;
 }
 
-export function Header({ onOpensatellitesModal }: HeaderProps) {
+export function Header({ onOpenSatellitesModal }: HeaderProps) {
   return (
-    <Container>
+    <Container data-testid="header-container">
       <Content>
         <Logo />
 
-        <button type="button" onClick={onOpensatellitesModal}>
+        <button
+          data-testid="header-button"
+          type="button"
+          onClick={onOpenSatellitesModal}
+        >
           Find Satellites
         </button>
       </Content>

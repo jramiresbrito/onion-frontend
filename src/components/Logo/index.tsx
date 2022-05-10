@@ -1,5 +1,5 @@
 import { Container } from './styles';
 
 export function Logo() {
-  return <Container>Starlink 🛰️</Container>;
+  return <Container data-testid="logo">Starlink 🛰️</Container>;
 }

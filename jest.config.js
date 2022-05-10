@@ -1,10 +1,13 @@
 module.exports = {
   testPathIgnorePattenrs: ['/node_modules/'],
-  setupFilesAfterEnv: [
-    "<rootDir>/src/tests/setupTests.ts"
+  setupFiles: [
+    "<rootDir>/src/tests/setupTests.ts" // not working idk why, I've tried AfterEnv also
   ],
   transform: {
     "^.+\\.(js|jsx|ts|tsx|)$": "<rootDir>/node_modules/babel-jest"
   },
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  moduleNameMapper: {
+    "\\.(scss)$": "identity-obj-proxy"
+  }
 }
