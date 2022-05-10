@@ -1,16 +1,22 @@
 import { useSatellites } from '../../hooks/useSatellites';
 import { Container } from './styles';
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import { Earth } from '../Earth';
+import { Pin } from '../Pin';
 
 export function Globe() {
-  const { satellites } = useSatellites();
+  const { convertToSphericalCoordinates } = useSatellites();
+  const coordinates = convertToSphericalCoordinates();
 
   return (
-    <Container>
-      <ul>
-        {satellites.map((satellite) => (
-          <li key={satellite.id}>{satellite.name}</li>
-        ))}
-      </ul>
+    <Container data-testid="globe-container">
+      <Canvas>
+        <Suspense fallback={null}>
+          <Pin coordinates={coordinates} />
+          <Earth />
+        </Suspense>
+      </Canvas>
     </Container>
   );
 }

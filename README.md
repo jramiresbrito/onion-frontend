@@ -17,4 +17,4 @@ Just download this project, navigate to the root folder and run the following co
   yarn start
 ```
 
-This will start the development server. You are ready to use the app under http://localhost:3000.
+This will start the development server. You are ready to use the app under http://localhost:3001.

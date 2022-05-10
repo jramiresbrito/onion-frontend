@@ -55,7 +55,7 @@ export function SatellitesModal({
         <img src={closeImg} alt="Close modal" />
       </button>
 
-      <Container onSubmit={handleFindClosestSatellites}>
+      <Container data-testid="satellites-modal-container" onSubmit={handleFindClosestSatellites}>
         <h2>Find Closest Satellites</h2>
 
         <label>

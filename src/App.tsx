@@ -8,7 +8,8 @@ import { Globe } from './components/Globe';
 import { GlobalStyle } from './styles/global';
 import { SatellitesProvider } from './hooks/useSatellites';
 
-Modal.setAppElement('#root');
+// Check if there is a better solution
+if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
 export function App() {
   const [satellitesModalIsOpened, setSatellitesModalIsOpened] = useState(false);
@@ -22,10 +23,10 @@ export function App() {
   }
 
   return (
-    <div className="App">
+    <div data-testid="app-container" className="App">
       <SatellitesProvider>
         <GlobalStyle />
-        <Header onOpensatellitesModal={handleOpenSatellitesModal} />
+        <Header onOpenSatellitesModal={handleOpenSatellitesModal} />
 
         <SatellitesModal
           isOpen={satellitesModalIsOpened}
